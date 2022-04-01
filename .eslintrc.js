@@ -27,6 +27,15 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'comma-dangle': ['error', 'never'],
     'linebreak-style': 0,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
-  }
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/prop-types': 0
+  },
+  overrides: [
+    {
+      files: ['**/*.stories.*'],
+      rules: {
+        'import/no-anonymous-default-export': 'off'
+      }
+    }
+  ]
 };

@@ -1,13 +1,23 @@
+// external imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+// Theme Customizer
+import MuiThemeProvider from './muiThemeProvider';
+
+// internal imports
 import App from './App';
+
+// web vitals
 import reportWebVitals from './reportWebVitals';
 
+// stylesheets
+import './index.css';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <MuiThemeProvider>
     <App />
-  </React.StrictMode>,
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 

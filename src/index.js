@@ -2,6 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// router import
+import { BrowserRouter } from 'react-router-dom';
+
+// redux imports
+import { Provider } from 'react-redux';
+import store from './store';
+
 // Theme Customizer
 import MuiThemeProvider from './muiThemeProvider';
 
@@ -15,9 +22,13 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 ReactDOM.render(
-  <MuiThemeProvider>
-    <App />
-  </MuiThemeProvider>,
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <BrowserRouter basename="/">
+        <App />
+      </BrowserRouter>
+    </MuiThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );
 

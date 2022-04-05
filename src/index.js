@@ -1,7 +1,6 @@
 // external imports
 import React from 'react';
-import ReactDOM from 'react-dom';
-
+import { createRoot } from 'react-dom/client';
 // router import
 import { BrowserRouter } from 'react-router-dom';
 
@@ -21,15 +20,15 @@ import reportWebVitals from './reportWebVitals';
 // stylesheets
 import './index.css';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <Provider store={store}>
     <MuiThemeProvider>
       <BrowserRouter basename="/">
         <App />
       </BrowserRouter>
     </MuiThemeProvider>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
